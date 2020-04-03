@@ -14,6 +14,10 @@ Ett designmönster (design pattern) är ett standardrecept som kan användas fö
   
 Läs på mer om MVC här: [https://www.guru99.com/mvc-tutorial.html](https://www.guru99.com/mvc-tutorial.html)
 
+### Klassdiagram (utkast)
+
+![class_diagram](Media/google_drive_sync_classdiagram.png)
+
 ### Klassen FileObserver
 
 FileObserver har som uppgift att bevaka en vald mapp (och dess underliggande mappar) efter förändringar i filsystemet. Klassen initieras med argumentet `target_directory` som är absolut sökväg till bevakad mapp. Ändringar i filer verifieras via filens modified time (`File::mtime`). `@file_inventory` är en förteckning över bevakade filer. Den innehåller nyckel-värde-par där nyckeln är absolut sökväg till filen och värdet är filens mtime. Klassen tillhandahåller tre olika listor (datatyp Array) `@changed_files`, `@new_files`, `@deleted_files` som håller ändrade, nya, respektive borttagna filer. Dessa tre listor är tillgängliga via tre olika getter-metoder. Metoden `FileObserver#update_file_inventory` anropas för att uppdatera `@file_inventory` och dom tre listorna där ändringar kan spåras.
