@@ -24,3 +24,6 @@ FileObserver har som uppgift att bevaka en vald mapp (och dess underliggande map
 
 ![file_observer_update_file_inventory](Media/update_file_inventory.png)
 
+### Klassen FileObserverPersistence
+
+Persistens betyder varaktighet eller beständighet. Klassen FileObserverPersistence har som uppgift att "komma ihåg" tillståndet för ett FileObserver-objekt när applikationen avslutas (eller kanske kraschar). Det är också via denna klass som vi kan återkalla det senast sparade tillståndet för ett FileObserver-objekt när applikationen startar. Klassen har två klassmetoder (dvs metoder som kan anropas utan att klassen först måste instansieras): `FileObserverPersistence::save` och `FileObserverPersistence::load`.
